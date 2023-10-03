@@ -1,0 +1,16 @@
+.discount {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	margin: 0px 0px 41px 80px;
+	padding-left: 7px;
+	font-size: 22px;
+	font-weight: 600;
+	line-height: 26px;
+	color: #fff;
+	background-color: #f63a3a;
+	border-radius: 10px 2px 2px 10px;
+	width: 100px;
+	height: 36px;
+	clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}

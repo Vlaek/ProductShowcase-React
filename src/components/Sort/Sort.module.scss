@@ -1,0 +1,41 @@
+.sort {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	width: 750px;
+
+	&__text {
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 1;
+		color: #4d5969;
+	}
+
+	&__button {
+		cursor: pointer;
+		display: flex;
+		align-items: flex-end;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&__text {
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 1;
+		color: #2a7be4;
+
+		&.active {
+			color: #344050;
+		}
+	}
+
+	&__type {
+		font-size: 20px;
+		font-weight: 900;
+		margin-left: 5px;
+		color: #344050;
+	}
+}

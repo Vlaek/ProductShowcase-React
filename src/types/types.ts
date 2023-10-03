@@ -20,3 +20,8 @@ export interface SortItem {
 	name: string
 	callback: SortCallback
 }
+
+export interface IFilter {
+	sort: SortItem
+	query: string
+}

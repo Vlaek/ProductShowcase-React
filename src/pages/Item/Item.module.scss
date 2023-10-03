@@ -46,38 +46,18 @@
 }
 
 .logo {
-	/* width: 200px; */
 	height: 80px;
 	margin-right: 80px;
 
 	img {
-		/* width: 100%; */
 		height: 100%;
 	}
-}
-
-.discount {
-	display: flex;
-	justify-content: start;
-	align-items: center;
-	margin: 0px 0px 41px 80px;
-	padding-left: 7px;
-	font-size: 22px;
-	font-weight: 600;
-	line-height: 26px;
-	color: #fff;
-	background-color: #f63a3a;
-	border-radius: 10px 2px 2px 10px;
-	width: 100px;
-	height: 36px;
-	clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
 }
 
 .body {
 	display: flex;
 	align-items: center;
 	flex: 1 0 auto;
-	/* width: 100%; */
 	margin-left: 90px;
 	margin-right: 80px;
 }
@@ -108,108 +88,6 @@
 .info {
 	display: flex;
 	flex-direction: column;
-}
-
-.stars {
-	margin-left: auto;
-	font-size: 25px;
-	font-weight: 900;
-	line-height: 26px;
-	margin-bottom: 20px;
-}
-
-.prices {
-	display: flex;
-	align-items: baseline;
-	justify-content: space-between;
-}
-
-.old_price {
-	color: #94979c;
-	font-weight: 600;
-	line-height: 1;
-	position: relative;
-
-	.price {
-		font-size: 33px;
-		margin-bottom: 5px;
-		position: relative;
-		display: flex;
-	}
-
-	.int {
-		display: inline-block;
-		font-size: 33px;
-	}
-
-	.float {
-		display: inline-block;
-		font-size: 18px;
-		line-height: 1.25;
-		margin-left: 2px;
-	}
-
-	.value {
-		margin-left: 10px;
-	}
-
-	.line {
-		top: calc(50% - 2px);
-		left: -5px;
-		position: absolute;
-		width: calc(100% + 10px);
-		height: 4px;
-		background-color: red;
-	}
-
-	.text {
-		position: absolute;
-		width: 150px;
-		text-transform: uppercase;
-		margin-top: 3px;
-		font-size: 19px;
-		font-weight: 600;
-		color: #6f7885;
-	}
-}
-
-.new_price {
-	display: flex;
-	flex-direction: column;
-	color: #344050;
-	font-weight: 600;
-	line-height: 1;
-
-	.price {
-		font-size: 52px;
-		margin-bottom: 5px;
-		display: flex;
-	}
-
-	.int {
-		display: inline-block;
-		font-size: 52px;
-	}
-
-	.float {
-		display: inline-block;
-		font-size: 29px;
-		line-height: 1.25;
-		margin-left: 1px;
-	}
-
-	.value {
-		margin-left: 10px;
-	}
-
-	.text {
-		font-size: 19px;
-		font-weight: 600;
-		line-height: 26px;
-		text-transform: uppercase;
-		text-align: center;
-		color: #6f7885;
-	}
 }
 
 .footer {
