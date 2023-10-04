@@ -1,4 +1,6 @@
 import { FC, useState, useEffect } from 'react'
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 import Sort from '../../components/Sort/Sort'
 import Pagination from '../../components/Pagination/Pagination'
 import Items from '../../components/Items/Items'
@@ -10,6 +12,10 @@ import styles from './Main.module.scss'
 
 const Main: FC = () => {
 	const [data, setData] = useState<IItem[]>([])
+	const [totalItems, setTotalItems] = useState(0)
+	const [page, setPage] = useState(0)
+	const [limit, setLimit] = useState(3)
+	const [isLoading, setIsLoading] = useState(true)
 
 	const [filter, setFilter] = useState<IFilter>({
 		sort: {
@@ -21,8 +27,16 @@ const Main: FC = () => {
 
 	useEffect(() => {
 		const handleFetchData = async () => {
-			const response = await DataService.getAll()
-			setData([...response])
+			try {
+				const response = await DataService.getAll()
+				setData([...response])
+				setIsLoading(true)
+			} finally {
+				setIsLoading(false)
+			}
+
+			const length = await DataService.getDataLength()
+			setTotalItems(length)
 		}
 		handleFetchData()
 	}, [])
@@ -49,6 +63,12 @@ const Main: FC = () => {
 
 	const sortedAndFilteredItems = useFilter(data, filter)
 
+	const totalPages = Math.ceil(sortedAndFilteredItems.length / limit)
+
+	const pages = Array.from({ length: totalPages }, (_, i) =>
+		sortedAndFilteredItems.slice(i * limit, i * limit + limit),
+	)
+
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.content}>
@@ -57,7 +77,14 @@ const Main: FC = () => {
 					<Sort filter={filter} onSort={handleSortByField} />
 					<Search filter={filter} onSearch={handleSearch} />
 				</div>
-				<Pagination />
+				<Pagination
+					setPage={setPage}
+					totalItems={totalItems}
+					limit={limit}
+					setLimit={setLimit}
+					currentPage={page}
+					isLoading={isLoading}
+				/>
 				<div className={styles.table}>
 					<div className={styles.table__header}>
 						<div>Фото</div>
@@ -66,7 +93,19 @@ const Main: FC = () => {
 						<div>Начало ротации</div>
 						<div>Конец ротации</div>
 					</div>
-					<Items items={sortedAndFilteredItems} />
+					{isLoading ? (
+						<SkeletonTheme
+							baseColor='#b5b5b5'
+							highlightColor='#cccccc'
+							height={75}
+							width={'100%'}
+							enableAnimation={true}
+						>
+							<Skeleton count={3} className={styles.skelet} />
+						</SkeletonTheme>
+					) : (
+						pages.length > 0 && <Items items={pages[page]} />
+					)}
 				</div>
 			</div>
 		</div>

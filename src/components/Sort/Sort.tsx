@@ -35,7 +35,7 @@ const Sort: FC<SortProps> = ({ filter, onSort }) => {
 			{sortList.map((item, index) => (
 				<div className={styles.sort__button} key={index}>
 					<div
-						className={cn(styles.sort__text, {
+						className={cn(styles.sort__button__text, {
 							[styles.active]: filter.sort.name === item.name,
 						})}
 						onClick={() => onSort(item.callback, item.name)}
