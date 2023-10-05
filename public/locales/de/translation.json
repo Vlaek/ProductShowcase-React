@@ -1,0 +1,29 @@
+{
+	"main": {
+		"title": "Inhaltskarten",
+		"theme": {
+			"light": "Helles Thema",
+			"dark": "Dunkles Thema"
+		}
+	},
+	"table": {
+		"photo": "Foto",
+		"name": "Name",
+		"views": "Ansichten",
+		"start_date": "Startdatum",
+		"end_date": "Enddatum"
+	},
+	"language": "Sprache auswählen",
+	"sort": {
+		"title": "Sortieren:",
+		"options": {
+			"one": "nach Name",
+			"two": "nach Ansichten",
+			"three": "nach Startdatum",
+			"four": "nach Enddatum"
+		}
+	},
+	"search": {
+		"placeholder": "Suchen..."
+	}
+}

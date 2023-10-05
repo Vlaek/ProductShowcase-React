@@ -6,7 +6,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #edf2f8;
+	background-color: var(--item-background);
 }
 
 .button_back {
@@ -17,11 +17,13 @@
 	font-weight: 400;
 	line-height: 21px;
 	margin-bottom: 48px;
-	color: #344050;
+	color: var(--color);
 	cursor: pointer;
+	transition: all 0.3s ease;
 
 	&:hover {
 		text-decoration: underline;
+		transform: scale(1.02);
 	}
 }
 
@@ -32,7 +34,7 @@
 .item {
 	height: 754px;
 	width: 100%;
-	background-color: #fff;
+	background-color: var(--background-color);
 	display: flex;
 	flex-direction: column;
 }
@@ -80,7 +82,7 @@
 	font-size: 38px;
 	font-weight: 600;
 	line-height: 45px;
-	color: #344050;
+	color: var(--color);
 	margin-bottom: 50px;
 	width: 539px;
 }
@@ -102,6 +104,6 @@
 		font-size: 22px;
 		font-weight: 600;
 		line-height: 23px;
-		color: #6f7885;
+		color: var(--color);
 	}
 }

@@ -1,0 +1,36 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.language {
+	font-size: 16px;
+	font-weight: 500;
+	color: #4d5969;
+	margin-left: 25px;
+}
+
+.list {
+	display: flex;
+	list-style-type: none;
+}
+
+.button {
+	font-size: 16px;
+	font-weight: 500;
+	color: #2a7be4;
+	margin-left: 25px;
+	background-color: var(--background-color);
+	cursor: pointer;
+	transition: all 0.3s ease;
+
+	&:hover {
+		text-decoration: underline;
+		transform: scale(1.02);
+	}
+
+	&.active {
+		color: var(--color);
+		text-decoration: underline;
+	}
+}

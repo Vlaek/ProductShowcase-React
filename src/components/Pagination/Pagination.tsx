@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
@@ -24,6 +24,12 @@ const Pagination: FC<PaginationProps> = ({
 }) => {
 	const totalPages = Math.ceil(totalItems / limit)
 	const pages = Array.from({ length: totalPages }, (_, index) => index + 1)
+
+	useEffect(() => {
+		if (currentPage >= totalPages) {
+			setPage(0)
+		}
+	}, [currentPage, setPage, totalPages])
 
 	let startPage = Math.max(1, currentPage)
 	let endPage = Math.min(totalPages, currentPage + 2)

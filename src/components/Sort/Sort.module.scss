@@ -8,26 +8,29 @@
 		font-size: 16px;
 		font-weight: 500;
 		line-height: 1;
-		color: #4d5969;
+		color: var(--color);
 	}
 
 	&__button {
 		cursor: pointer;
 		display: flex;
 		align-items: flex-end;
+		transition: all 0.3s ease;
+		color: #2a7be4;
 
 		&:hover {
 			text-decoration: underline;
+			transform: scale(1.02);
 		}
 
 		&__text {
 			font-size: 16px;
 			font-weight: 500;
 			line-height: 1;
-			color: #2a7be4;
 
 			&.active {
-				color: #344050;
+				color: var(--color);
+				text-decoration: underline;
 			}
 		}
 	}
@@ -36,6 +39,6 @@
 		font-size: 20px;
 		font-weight: 900;
 		margin-left: 5px;
-		color: #344050;
+		color: var(--color);
 	}
 }

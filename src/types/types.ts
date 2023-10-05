@@ -17,7 +17,7 @@ export interface IItem {
 type SortCallback = (a: IItem, b: IItem) => number
 
 export interface SortItem {
-	name: string
+	id: number
 	callback: SortCallback
 }
 

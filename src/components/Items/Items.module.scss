@@ -1,7 +1,7 @@
 .item {
 	height: 75px;
 	padding: 17px 20px 17px 20px;
-	border-bottom: 1px solid #d8e2ee;
+	border-bottom: 1px solid var(--table-color);
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -26,7 +26,6 @@
 			font-size: 16px;
 			font-weight: 500;
 			line-height: 16px;
-			color: #4d5969;
 			margin-bottom: 7px;
 		}
 
@@ -44,7 +43,6 @@
 		font-size: 14px;
 		line-height: 13px;
 		text-align: center;
-		color: #4d5969;
 	}
 
 	&__date {
@@ -52,6 +50,5 @@
 		font-size: 14px;
 		line-height: 13px;
 		text-align: center;
-		color: #4d5969;
 	}
 }

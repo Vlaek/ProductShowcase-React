@@ -30,12 +30,13 @@ input::-ms-clear {
 
 body,
 html {
-	background: #fff;
-	color: #222;
+	background: var(--background-color);
+	color: var(--color);
 	font-family: 'Poppins', sans-serif;
 	font-weight: 300;
 	height: 100%;
 	width: 100%;
+	transition: all 0.3s ease;
 }
 
 a,
@@ -45,4 +46,22 @@ a:visited {
 
 a:hover {
 	text-decoration: none;
+}
+
+html[data-theme='Dark'] {
+	--background-color: #292929;
+	--color: #fff;
+	--table-color: #454545;
+	--button-color: #454545;
+	--border: #454545;
+	--item-background: #454545;
+}
+
+html[data-theme='Light'] {
+	--background-color: #fff;
+	--color: #344050;
+	--table-color: #edf2f8;
+	--button-color: #454545;
+	--border: #d8e2ee;
+	--item-background: #edf2f8;
 }

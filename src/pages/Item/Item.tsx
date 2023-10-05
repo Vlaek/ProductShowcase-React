@@ -7,6 +7,7 @@ import DataService from '../../services/DataService'
 import { IItem } from '../../types/types'
 import styles from './Item.module.scss'
 import Prices from '../../components/Prices/Prices'
+import { useTheme } from '../../hooks/useTheme'
 
 const Item: FC = () => {
 	const [item, setItem] = useState<IItem | null>(null)
@@ -22,6 +23,8 @@ const Item: FC = () => {
 		}
 		handleFetchData()
 	}, [id])
+
+	useTheme()
 
 	return (
 		<div className={styles.wrapper}>

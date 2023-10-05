@@ -16,7 +16,6 @@
 	font-weight: 600;
 	font-size: 22px;
 	line-height: 23px;
-	color: #344050;
 	margin-bottom: 24px;
 }
 
@@ -29,6 +28,7 @@
 
 .table {
 	width: 100%;
+	margin-top: 12px;
 
 	&__header {
 		display: grid;
@@ -38,14 +38,12 @@
 
 		height: 35px;
 		padding: 0 20px;
-		background-color: #edf2f8;
+		background-color: var(--table-color);
 
 		div {
 			font-size: 13px;
 			font-weight: 600;
 			line-height: 17px;
-
-			color: #4d5969;
 
 			&:nth-child(3),
 			&:nth-child(4),
@@ -56,5 +54,36 @@
 	}
 }
 
-.skelet {
+.pagination {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	.pag {
+		display: flex;
+		align-items: stretch;
+	}
+}
+
+.theme {
+	display: flex;
+
+	&__item {
+		margin-left: 30px;
+		font-size: 16px;
+		font-weight: 500;
+		color: #2a7be4;
+		cursor: pointer;
+		transition: all 0.3s ease;
+
+		&:hover {
+			text-decoration: underline;
+			transform: scale(1.02);
+		}
+
+		&.active {
+			color: var(--color);
+			text-decoration: underline;
+		}
+	}
 }
