@@ -16,7 +16,8 @@ import cn from 'classnames'
 
 const Main: FC = () => {
 	const [data, setData] = useState<IItem[]>([])
-	const [page, setPage] = useState(0)
+	const [pages, setPages] = useState<IItem[][]>([])
+	const [pageNumber, setPageNumber] = useState(0)
 	const [limit, setLimit] = useState(3)
 	const [isLoading, setIsLoading] = useState(true)
 
@@ -63,11 +64,15 @@ const Main: FC = () => {
 
 	const sortedAndFilteredItems = useFilter(data, filter)
 
-	const totalPages = Math.ceil(sortedAndFilteredItems.length / limit)
-
-	const pages = Array.from({ length: totalPages }, (_, i) =>
-		sortedAndFilteredItems.slice(i * limit, i * limit + limit),
-	)
+	useEffect(() => {
+		const totalPages = Math.ceil(sortedAndFilteredItems.length / limit)
+		setPages(
+			Array.from({ length: totalPages }, (_, i) =>
+				sortedAndFilteredItems.slice(i * limit, i * limit + limit),
+			),
+		)
+		setPageNumber(0)
+	}, [limit, sortedAndFilteredItems])
 
 	const { t } = useTranslation()
 
@@ -84,11 +89,11 @@ const Main: FC = () => {
 				<div className={styles.pagination}>
 					<div className={styles.pag}>
 						<Pagination
-							setPage={setPage}
+							setPage={setPageNumber}
 							totalItems={sortedAndFilteredItems.length}
 							limit={limit}
 							setLimit={setLimit}
-							currentPage={page}
+							currentPage={pageNumber}
 							isLoading={isLoading}
 						/>
 						<LanguageSelect />
@@ -131,7 +136,7 @@ const Main: FC = () => {
 							<Skeleton count={limit} className={styles.skelet} />
 						</SkeletonTheme>
 					) : (
-						pages.length > 0 && <Items items={pages[page]} />
+						pages.length > 0 && <Items items={pages[pageNumber]} />
 					)}
 				</div>
 			</div>
