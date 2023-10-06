@@ -1,6 +1,7 @@
 {
 	"name": "product-showcase",
 	"version": "0.1.0",
+	"homepage": "https://vlaek.github.io/ProductShowcase-React",
 	"private": true,
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^6.4.2",
@@ -11,6 +12,7 @@
 		"@testing-library/user-event": "^13.2.1",
 		"axios": "^1.5.1",
 		"classnames": "^2.3.2",
+		"gh-pages": "^6.0.0",
 		"i18next": "^23.5.1",
 		"i18next-browser-languagedetector": "^7.1.0",
 		"i18next-http-backend": "^2.2.2",
@@ -28,6 +30,8 @@
 		"web-vitals": "^2.1.0"
 	},
 	"scripts": {
+		"predeploy": "yarn run build",
+		"deploy": "gh-pages -d build",
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",

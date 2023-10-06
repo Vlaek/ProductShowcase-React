@@ -17,7 +17,7 @@ const Items: FC<ItemsProps> = ({ items }) => {
 				<div
 					className={styles.item}
 					key={item.name}
-					onClick={() => navigate(`/${item.id}`)}
+					onClick={() => navigate(`/ProductShowcase/${item.id}`)}
 				>
 					<div className={styles.item__img}>
 						<img src={item.image_url} alt={item.name} />

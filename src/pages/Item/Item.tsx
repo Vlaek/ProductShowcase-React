@@ -1,5 +1,7 @@
 import { FC, useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 import { GrFormPrevious } from 'react-icons/gr'
 import Stars from '../../components/Stars/Stars'
 import Discount from '../../components/Discount/Discount'
@@ -29,11 +31,24 @@ const Item: FC = () => {
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.content}>
-				<div className={styles.button_back} onClick={() => navigate('/')}>
+				<div
+					className={styles.button_back}
+					onClick={() => navigate('/ProductShowcase/')}
+				>
 					<GrFormPrevious />
 					<span>Назад</span>
 				</div>
-				{item !== null && (
+				{item == null ? (
+					<SkeletonTheme
+						baseColor='#b5b5b5'
+						highlightColor='#cccccc'
+						height={754}
+						width={'100%'}
+						enableAnimation={true}
+					>
+						<Skeleton count={1} />
+					</SkeletonTheme>
+				) : (
 					<div className={styles.item}>
 						<div className={styles.header}>
 							<Discount item={item} />

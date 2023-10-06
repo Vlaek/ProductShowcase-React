@@ -7,14 +7,15 @@ type Locale = {
 	[key: string]: { title: string }
 }
 
-const locales: Locale = {
-	ru: { title: 'Russian' },
-	en: { title: 'English' },
-	de: { title: 'German' },
-}
-
 const LanguageSelect: FC = () => {
 	const { t, i18n } = useTranslation()
+
+	const locales: Locale = {
+		ru: { title: t('main.language.ru') },
+		en: { title: t('main.language.en') },
+		de: { title: t('main.language.de') },
+	}
+
 	return (
 		<div className={styles.wrapper}>
 			<ul className={styles.list}>

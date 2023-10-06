@@ -4,6 +4,11 @@
 		"theme": {
 			"light": "Light theme",
 			"dark": "Dark theme"
+		},
+		"language": {
+			"ru": "Russian",
+			"en": "English",
+			"de": "German"
 		}
 	},
 	"table": {

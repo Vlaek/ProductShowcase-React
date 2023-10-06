@@ -38,7 +38,9 @@ export default class DataService {
 
 	static async getById(id: string | undefined) {
 		try {
-			const response = await axios.get('/products.json')
+			const response = await axios.get(
+				'https://651d237544e393af2d5938ea.mockapi.io/products',
+			)
 			const newData = response.data.map((item: IItem, index: number) => {
 				return { ...item, id: index }
 			})
