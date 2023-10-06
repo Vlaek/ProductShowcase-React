@@ -128,7 +128,7 @@ const Main: FC = () => {
 							width={'100%'}
 							enableAnimation={true}
 						>
-							<Skeleton count={3} className={styles.skelet} />
+							<Skeleton count={limit} className={styles.skelet} />
 						</SkeletonTheme>
 					) : (
 						pages.length > 0 && <Items items={pages[page]} />

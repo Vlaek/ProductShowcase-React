@@ -12,11 +12,12 @@
 .button_back {
 	display: flex;
 	align-items: center;
-	width: 70px;
+	justify-content: center;
+	width: 100px;
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 21px;
-	margin-bottom: 48px;
+	margin-bottom: 36px;
 	color: var(--color);
 	cursor: pointer;
 	transition: all 0.3s ease;

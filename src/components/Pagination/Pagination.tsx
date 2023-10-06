@@ -4,6 +4,7 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import cn from 'classnames'
 import styles from './Pagination.module.scss'
+import { useTranslation } from 'react-i18next'
 
 interface PaginationProps {
 	setPage: React.Dispatch<React.SetStateAction<number>>
@@ -66,6 +67,8 @@ const Pagination: FC<PaginationProps> = ({
 			else setLimit(+e.target.value)
 	}
 
+	const { t } = useTranslation()
+
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.pagination}>
@@ -108,7 +111,7 @@ const Pagination: FC<PaginationProps> = ({
 				type='number'
 				value={limit}
 				onChange={handleChangeLimit}
-				title={`Число продуктов на странице от 1 до ${totalItems}`}
+				title={`${t('pagination.title')} ${totalItems}`}
 			/>
 		</div>
 	)

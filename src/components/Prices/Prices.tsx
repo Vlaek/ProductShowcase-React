@@ -4,6 +4,7 @@ import { faRubleSign } from '@fortawesome/free-solid-svg-icons'
 import styles from './Prices.module.scss'
 import { IItem } from '../../types/types'
 import { priceConvert } from '../../utils/priceConvert'
+import { useTranslation } from 'react-i18next'
 
 interface PricesProps {
 	item: IItem
@@ -24,6 +25,8 @@ const Prices: FC<PricesProps> = ({ item }) => {
 		}
 	}, [item])
 
+	const { t } = useTranslation()
+
 	return (
 		<div className={styles.prices}>
 			<div className={styles.old_price}>
@@ -35,7 +38,7 @@ const Prices: FC<PricesProps> = ({ item }) => {
 							<FontAwesomeIcon icon={faRubleSign} className={styles.value} />
 							<div className={styles.line}></div>
 						</div>
-						<div className={styles.text}>старая цена</div>
+						<div className={styles.text}>{t('item.old_price')}</div>
 					</>
 				)}
 			</div>
@@ -45,7 +48,7 @@ const Prices: FC<PricesProps> = ({ item }) => {
 					<div className={styles.float}>{newPrice[1]}</div>
 					<FontAwesomeIcon icon={faRubleSign} className={styles.value} />
 				</div>
-				<div className={styles.text}>цена по акции</div>
+				<div className={styles.text}>{t('item.new_price')}</div>
 			</div>
 		</div>
 	)

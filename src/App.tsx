@@ -4,7 +4,7 @@ import AppRouter from './components/AppRouter'
 
 const App: FC = () => {
 	return (
-		<Router>
+		<Router basename='/ProductShowcase-React'>
 			<AppRouter />
 		</Router>
 	)

@@ -10,6 +10,7 @@ import { IItem } from '../../types/types'
 import styles from './Item.module.scss'
 import Prices from '../../components/Prices/Prices'
 import { useTheme } from '../../hooks/useTheme'
+import { useTranslation } from 'react-i18next'
 
 const Item: FC = () => {
 	const [item, setItem] = useState<IItem | null>(null)
@@ -28,15 +29,14 @@ const Item: FC = () => {
 
 	useTheme()
 
+	const { t } = useTranslation()
+
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.content}>
-				<div
-					className={styles.button_back}
-					onClick={() => navigate('/ProductShowcase/')}
-				>
+				<div className={styles.button_back} onClick={() => navigate('/')}>
 					<GrFormPrevious />
-					<span>Назад</span>
+					<span>{t('item.back')}</span>
 				</div>
 				{item == null ? (
 					<SkeletonTheme
