@@ -33,44 +33,46 @@ const Item: FC = () => {
 
 	return (
 		<div className={styles.wrapper}>
-			<div className={styles.content}>
-				<div className={styles.button_back} onClick={() => navigate('/')}>
-					<GrFormPrevious />
-					<span>{t('item.back')}</span>
-				</div>
-				{item == null ? (
-					<SkeletonTheme
-						baseColor='#b5b5b5'
-						highlightColor='#cccccc'
-						height={754}
-						width={'100%'}
-						enableAnimation={true}
-					>
-						<Skeleton count={1} />
-					</SkeletonTheme>
-				) : (
-					<div className={styles.item}>
-						<div className={styles.header}>
-							<Discount item={item} />
-							<div className={styles.logo}>
-								<img src={item.logo_url} alt='logo' draggable={false} />
-							</div>
-						</div>
-						<div className={styles.body}>
-							<div className={styles.img}>
-								<img src={item.image_url} alt='img' draggable={false} />
-							</div>
-							<div className={styles.info}>
-								<div className={styles.item__name}>{item.name}</div>
-								<Stars item={item} />
-								<Prices item={item} />
-							</div>
-						</div>
-						<div className={styles.footer}>
-							<p className={styles.footer__text}>{item.disclaimer}</p>
-						</div>
+			<div className={styles.container}>
+				<div className={styles.content}>
+					<div className={styles.button_back} onClick={() => navigate('/')}>
+						<GrFormPrevious />
+						<span>{t('item.back')}</span>
 					</div>
-				)}
+					{item == null ? (
+						<SkeletonTheme
+							baseColor='#b5b5b5'
+							highlightColor='#cccccc'
+							height={754}
+							width={'100%'}
+							enableAnimation={true}
+						>
+							<Skeleton count={1} />
+						</SkeletonTheme>
+					) : (
+						<div className={styles.item}>
+							<div className={styles.header}>
+								<Discount item={item} />
+								<div className={styles.logo}>
+									<img src={item.logo_url} alt='logo' draggable={false} />
+								</div>
+							</div>
+							<div className={styles.body}>
+								<div className={styles.img}>
+									<img src={item.image_url} alt='img' draggable={false} />
+								</div>
+								<div className={styles.info}>
+									<div className={styles.item__name}>{item.name}</div>
+									<Stars item={item} />
+									<Prices item={item} />
+								</div>
+							</div>
+							<div className={styles.footer}>
+								<p className={styles.footer__text}>{item.disclaimer}</p>
+							</div>
+						</div>
+					)}
+				</div>
 			</div>
 		</div>
 	)

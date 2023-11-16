@@ -72,7 +72,7 @@ const Main: FC = () => {
 			),
 		)
 		setPageNumber(0)
-	}, [limit, sortedAndFilteredItems])
+	}, [limit, sortedAndFilteredItems, filter.sort])
 
 	const { t } = useTranslation()
 

@@ -9,6 +9,15 @@
 	background-color: var(--item-background);
 }
 
+.container {
+	width: 1200px;
+	overflow: auto;
+}
+
+.content {
+	width: 1200px;
+}
+
 .button_back {
 	display: flex;
 	align-items: center;
@@ -26,10 +35,6 @@
 		text-decoration: underline;
 		transform: scale(1.02);
 	}
-}
-
-.content {
-	width: 1200px;
 }
 
 .item {
